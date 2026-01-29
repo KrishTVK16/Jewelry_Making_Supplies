@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Jewelora Supplies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: var(--tertiary);
+        }
+
+        .auth-card {
+            background: var(--card-bg);
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="text-center mb-4">
+                <a href="index.html" class="navbar-brand d-inline-block">
+                    JEWELORA SUPPLIES
+                    <small>Wholesale & Catalog</small>
+                </a>
+                <h2 class="h3 mt-4 font-serif">Create Account</h2>
+                <p class="text-muted small">Join our global network of jewelry professionals.</p>
+            </div>
+
+            <ul class="nav nav-tabs nav-fill mb-4" id="authTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="wholesale-tab" data-bs-toggle="tab" data-bs-target="#wholesale"
+                        type="button" role="tab">Wholesale Application</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="retail-tab" data-bs-toggle="tab" data-bs-target="#retail" type="button"
+                        role="tab">Retail Account</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="authTabsContent">
+                <!-- Wholesale Form -->
+                <div class="tab-pane fade show active" id="wholesale" role="tabpanel">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Company Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Tax ID / Reseller
+                                    #</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Business Type</label>
+                                <select class="form-select">
+                                    <option>Select...</option>
+                                    <option>Manufacturer</option>
+                                    <option>Retailer</option>
+                                    <option>Designer</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Contact Person</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Email Address</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Password</label>
+                                <input type="password" class="form-control" required>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" required>
+                                    <label class="form-check-label small text-muted">I agree to the Wholesale Terms &
+                                        MOQ Policy.</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <a href="dashboard.html" class="btn btn-primary w-100">Submit Application</a>
+                                <p class="text-muted text-center small mt-2">Applications effectively verified within
+                                    24h.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Retail Form -->
+                <div class="tab-pane fade" id="retail" role="tabpanel">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">First Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Last Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Email Address</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Password</label>
+                                <input type="password" class="form-control" required>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" required>
+                                    <label class="form-check-label small text-muted">Join the Newsletter for
+                                        updates.</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <a href="dashboard.html" class="btn btn-secondary w-100">Create Account</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <p class="text-muted small text-center mt-4">
+                Already have an account? <a href="login.html" class="text-primary fw-bold">Log in</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
