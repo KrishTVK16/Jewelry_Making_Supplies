@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Header Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
-    if(themeToggle) {
+    if (themeToggle) {
         // Check local storage
         const currentTheme = localStorage.getItem('theme');
         if (currentTheme) {
@@ -57,23 +57,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic Year in Footer
     const yearSpan = document.getElementById('current-year');
-    if(yearSpan) {
+    if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-    
+
     // Mobile Sidebar Toggle (Dashboard)
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
+
     if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', () => {
+        // Function to toggle sidebar logic
+        const toggleSidebar = () => {
             sidebar.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        };
+
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent immediate closing
+            toggleSidebar();
         });
-        
-        // Close sidebar when clicking outside on mobile
+
+        // Close when clicking overlay (Preferred method)
+        if (overlay) {
+            overlay.addEventListener('click', closeSidebar);
+        }
+
+        // Close sidebar when clicking outside (Fallback logic)
         document.addEventListener('click', (e) => {
-            if (window.innerWidth < 992) {
-                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && sidebar.classList.contains('active')) {
-                    sidebar.classList.remove('active');
+            if (window.innerWidth < 1200 && sidebar.classList.contains('active')) {
+                // If checking overlay didn't work, check targets
+                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    closeSidebar();
                 }
             }
         });
