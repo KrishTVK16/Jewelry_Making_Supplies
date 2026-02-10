@@ -31,6 +31,12 @@
     --font-sans: 'Manrope', sans-serif;
     --font-serif: 'Cormorant Garamond', serif;
 
+    /* Brand Consistency */
+    --brand-font: 'Cormorant Garamond', serif;
+    --brand-weight: 700;
+    --brand-spacing: 2px;
+    --brand-size: 1.8rem;
+
     /* Spacing */
     --section-padding: 100px;
     --container-width: 1320px;
@@ -40,6 +46,27 @@
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
+
+    /* Animations */
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-float-delayed: float 6s ease-in-out 3s infinite;
+
+    /* Gradients */
+    --hero-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 [data-theme="dark"] {
@@ -50,15 +77,27 @@
     --light-bg: #1A1A1A;
     --card-bg: #1E1E1E;
     --tertiary: #1A1A1A;
+    --hero-gradient: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+
+    /* Adjusted Brand Colors for Dark Mode Contrast */
+    --primary: #66caa6;
+    /* Lighter Emerald for visibility on dark backgrounds */
+    --primary-dark: #4ab38f;
 }
 
 /* Base Styles */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--body-text);
     background-color: var(--body-bg);
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 h1,
@@ -102,6 +141,36 @@ img {
     height: auto;
 }
 
+/* Brand Styling */
+.navbar-brand,
+.footer-brand {
+    font-family: var(--brand-font);
+    font-weight: var(--brand-weight);
+    letter-spacing: var(--brand-spacing);
+    font-size: var(--brand-size);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: none !important;
+    /* Prevent Bootstrap max-width: 100% from squishing */
+    object-fit: contain;
+}
+
+.navbar-brand {
+    color: var(--primary) !important;
+}
+
+.footer-brand {
+    color: var(--heading-color) !important;
+    /* Matches footer text color */
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 /* Utilities */
 .text-primary {
     color: var(--primary) !important;
@@ -133,6 +202,20 @@ img {
 
 .section-padding {
     padding: var(--section-padding) 0;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+.grayscale-logos {
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.grayscale-logos:hover {
+    filter: grayscale(0%);
+    opacity: 1 !important;
 }
 
 .mb-6 {
@@ -229,25 +312,63 @@ img {
     color: var(--primary) !important;
 }
 
+.navbar .dropdown-menu {
+    margin-top: 15px;
+    border-radius: 0;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    padding: 10px 0;
+}
+
+.navbar .dropdown-item {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    color: var(--body-text);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:active,
+.navbar .dropdown-item.active {
+    background-color: var(--light-bg);
+    color: var(--primary);
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
-    padding: 120px 0;
-    background-color: var(--tertiary);
+    padding: 80px 0;
+    background: var(--hero-gradient);
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .btn-outline-primary {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.hero-section .btn-outline-primary:hover {
+    background-color: #FFFFFF;
+    color: var(--primary);
+    border-color: #FFFFFF;
 }
 
 .hero-content h1 {
     margin-bottom: 25px;
     color: #FFFFFF;
+    text-shadow: 0 0 20px #0B5F4B;
 }
 
 .hero-section p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(50, 99, 64, 0.9);
+    text-shadow: 0 0 10px #0B5F4B;
 }
 
 .hero-section .text-muted {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(50, 99, 64, 0.9) !important;
+    text-shadow: 0 0 10px #0B5F4B;
 }
 
 .hero-subtitle {
@@ -329,6 +450,7 @@ footer {
     background-color: var(--secondary);
     color: var(--heading-color);
     padding: 80px 0 30px;
+    border-top: 10px solid rgba(255, 255, 255, 0.3);
 }
 
 footer .text-white-50,
@@ -480,6 +602,8 @@ footer a:hover {
         padding: 20px;
         box-shadow: var(--shadow-md);
         z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .sidebar {
@@ -497,6 +621,85 @@ footer a:hover {
 
     h1 {
         font-size: 2.5rem;
+    }
+}
+
+/* Animations */
+.animate-float {
+    animation: var(--animate-float);
+}
+
+.animate-float-delayed {
+    animation: var(--animate-float-delayed);
+}
+
+/* Custom Responsive for Auth Buttons (User Request) */
+@media (max-width: 650px) {
+    .desktop-auth-btns {
+        display: none !important;
+    }
+
+    .mobile-auth-btns {
+        display: block !important;
+    }
+
+    /* Hero Buttons Vertical Stack on Mobile */
+    .hero-content .d-flex {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-content .d-flex .btn {
+        width: 100%;
+    }
+
+    /* Center align hero content on mobile */
+    .hero-content {
+        text-align: center;
+    }
+
+    /* Center align newsletter text on mobile */
+    .bg-secondary .row {
+        text-align: center;
+    }
+
+    /* Center align Partner Section on mobile */
+    .partner-content {
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .partner-content .btn {
+        margin-top: 1rem !important;
+        /* Adjust spacing to likely be smaller on mobile if needed, or just center it */
+    }
+
+    /* Newsletter Form Vertical Stack on Mobile */
+    .bg-secondary form.d-flex,
+    /* Targeting home-2.html specific newsletter section if different (it seems same) */
+    form.d-flex {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .bg-secondary form.d-flex .form-control,
+    .bg-secondary form.d-flex .btn,
+    form.d-flex .form-control,
+    form.d-flex .btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 651px) {
+    .mobile-auth-btns {
+        display: none !important;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 991px) {
+    .desktop-auth-btns .btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
     }
 }
 

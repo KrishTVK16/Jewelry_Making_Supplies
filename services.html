@@ -15,14 +15,21 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                JEWELORA SUPPLIES
-                <small>Wholesale & Catalog</small>
+            <a class="navbar-brand text-nowrap" href="index.html"
+                style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                <img src="assets/images/logo2.png" alt="Jewelora"
+                    style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                <span>JEWELORA</span>
             </a>
             <div class="d-flex align-items-center order-lg-3 gap-2">
                 <span id="theme-toggle" class="theme-toggle me-3"><i class="bi bi-moon"></i></span>
-                <a href="login.html" class="btn btn-outline-primary d-none d-sm-block">Login</a>
-                <a href="register.html" class="btn btn-primary">Sign Up</a>
+
+                <div class="desktop-auth-btns d-flex gap-2">
+                    <a href="dashboard.html" class="btn btn-outline-primary">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    <a href="register.html" class="btn btn-primary text-nowrap">Sign Up</a>
+                </div>
+
                 <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarContent">
                     <span class="navbar-toggler-icon"></span>
@@ -30,13 +37,40 @@
             </div>
             <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home-2.html">Catalog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Main Home</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Modern Home</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Catalog</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link active" href="services.html">Wholesale</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
                 </ul>
+
+                <!-- Mobile Menu Buttons (Visible < 650px) -->
+                <div class="mobile-auth-btns mt-3 pb-3 border-top pt-3">
+                    <a href="dashboard.html" class="btn btn-outline-primary w-100 mb-2">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                    <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -45,12 +79,8 @@
     <section class="bg-light py-5">
         <div class="container text-center py-5">
             <h1 class="display-4">Wholesale Services</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center text-uppercase small">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Services</li>
-                </ol>
-            </nav>
+            <p class="lead text-muted mt-3 mb-0">Comprehensive solutions for jewelers, from custom casting to global
+                sourcing.</p>
         </div>
     </section>
 
@@ -61,54 +91,55 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-gem"></i></div>
-                        <h3 class="h4 mb-3">Custom Casting</h3>
-                        <p class="text-muted mb-4">Send us your 3D models or wax patterns, and we will cast them in the
-                            metal of your choice with precision and care.</p>
+                        <h3 class="h4 mb-3">Custom Castings</h3>
+                        <p class="text-muted mb-4">Share your wax or 3D models and we cast them in chosen metals with
+                            careful detail and consistent quality control.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-tags"></i></div>
-                        <h3 class="h4 mb-3">Private Labeling</h3>
-                        <p class="text-muted mb-4">Create your own brand with our private labeling services. We package
-                            products with your logo and branding.</p>
+                        <h3 class="h4 mb-3">Private Labeler</h3>
+                        <p class="text-muted mb-4">Grow your brand with our labeling service, custom packs, logos, and
+                            clean presentation support for retail sales!.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-box-seam"></i></div>
-                        <h3 class="h4 mb-3">Bulk Sourcing</h3>
-                        <p class="text-muted mb-4">Need large quantities? Our global network allows us to source rare
-                            materials at competitive prices.</p>
+                        <h3 class="h4 mb-3">Global Sourcing</h3>
+                        <p class="text-muted mb-4">Source materials through our network to secure rare supplies at fair
+                            prices with trusted partners worldwide now!.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-truck"></i></div>
-                        <h3 class="h4 mb-3">Drop Shipping</h3>
-                        <p class="text-muted mb-4">We ship directly to your customers in unbranded packaging, allowing
-                            you to focus on sales and marketing.</p>
+                        <h3 class="h4 mb-3">Direct Shipping</h3>
+                        <p class="text-muted mb-4">We ship orders in plain packaging so you can focus on sales, growth,
+                            improvement and support for all your online orders fast.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-palette"></i></div>
-                        <h3 class="h4 mb-3">Plating Services</h3>
-                        <p class="text-muted mb-4">High-quality gold, rhodium, and silver plating services to give your
-                            jewelry the perfect finish.</p>
+                        <h3 class="h4 mb-3">Premium Plating</h3>
+                        <p class="text-muted mb-4">Our plating in gold, silver and rhodium adds shine, strength, quality
+                            and
+                            lasting beauty for quality jewelry items plus.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-box text-center">
                         <div class="feature-icon"><i class="bi bi-tools"></i></div>
-                        <h3 class="h4 mb-3">Repair & Restoration</h3>
-                        <p class="text-muted mb-4">Expert repair services for damaged jewelry, ensuring your pieces are
-                            restored to their original glory.</p>
+                        <h3 class="h4 mb-3">Jewelry Repairs</h3>
+                        <p class="text-muted mb-4">Our repair team fixes damaged pieces and restores them to wearable
+                            condition with careful work for valued buyers.</p>
                         <a href="service-details.html" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
@@ -130,7 +161,12 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5 class="mb-4">JEWELORA SUPPLIES</h5>
+                    <a class="navbar-brand text-nowrap" href="index.html"
+                        style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                        <img src="assets/images/logo2.png" alt="Jewelora"
+                            style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                        <span>JEWELORA</span>
+                    </a>
                     <p class="text-white-50 mb-4">The premier B2B destination for professional jewelry making supplies.
                     </p>
                     <div class="d-flex gap-3 social-links">
@@ -167,6 +203,7 @@
             <div
                 class="footer-bottom d-flex justify-content-between align-items-center border-top border-secondary pt-4 mt-5">
                 <span>&copy; <span id="current-year">2026</span> Jewelora Supplies. All rights reserved.</span>
+                <a href="#" class="text-white-50 back-to-top"><i class="bi bi-arrow-up-circle fs-4"></i></a>
             </div>
         </div>
     </footer>

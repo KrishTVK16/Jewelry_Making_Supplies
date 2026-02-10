@@ -15,14 +15,21 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                JEWELORA SUPPLIES
-                <small>Wholesale & Catalog</small>
+            <a class="navbar-brand text-nowrap" href="index.html"
+                style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                <img src="assets/images/logo2.png" alt="Jewelora"
+                    style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                <span>JEWELORA</span>
             </a>
             <div class="d-flex align-items-center order-lg-3 gap-2">
                 <span id="theme-toggle" class="theme-toggle me-3"><i class="bi bi-moon"></i></span>
-                <a href="login.html" class="btn btn-outline-primary d-none d-sm-block">Login</a>
-                <a href="register.html" class="btn btn-primary">Sign Up</a>
+
+                <div class="desktop-auth-btns d-flex gap-2">
+                    <a href="dashboard.html" class="btn btn-outline-primary">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    <a href="register.html" class="btn btn-primary text-nowrap">Sign Up</a>
+                </div>
+
                 <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarContent">
                     <span class="navbar-toggler-icon"></span>
@@ -30,13 +37,40 @@
             </div>
             <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home-2.html">Catalog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Main Home</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Modern Home</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Catalog</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Wholesale</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li><a class="dropdown-item active" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
                 </ul>
+
+                <!-- Mobile Menu Buttons (Visible < 650px) -->
+                <div class="mobile-auth-btns mt-3 pb-3 border-top pt-3">
+                    <a href="dashboard.html" class="btn btn-outline-primary w-100 mb-2">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                    <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -45,12 +79,8 @@
     <section class="bg-light py-5">
         <div class="container text-center py-5">
             <h1 class="display-4">Get in Touch</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center text-uppercase small">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                </ol>
-            </nav>
+            <p class="lead text-muted mt-3 mb-0">Get in touch with our team for any inquiries, support, or custom order
+                requests.</p>
         </div>
     </section>
 
@@ -59,8 +89,10 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <span class="text-primary text-uppercase letter-spacing-2 mb-2 d-block">Contact Info</span>
-                    <h2 class="mb-4">We're Here to Help</h2>
+                    <span class="text-primary text-uppercase letter-spacing-2 mb-2 d-block"
+                        style="text-align: center;">Contact
+                        Info</span>
+                    <h2 class="mb-4" style="text-align: center;">We're Here to Help</h2>
                     <p class="text-muted mb-5">Whether you have questions about wholesale pricing, custom orders, or
                         shipping logistics, our team is ready to assist you.</p>
 
@@ -91,7 +123,7 @@
 
                 <div class="col-lg-7">
                     <div class="bg-light p-5 border">
-                        <h3 class="font-serif mb-4">Send us a Message</h3>
+                        <h3 class="font-serif mb-4" style="text-align: center;">Send us a Message</h3>
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -128,9 +160,10 @@
     </section>
 
     <!-- Map -->
-    <div class="map-container bg-secondary"
-        style="height: 400px; display: flex; align-items: center; justify-content: center;">
-        <span class="text-white-50">Google Map Placeholder</span>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.349692994038!2d-73.9815776845938!3d40.75895497932676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258ff8d3f7f9b%3A0x70570b240193132e!2sDiamond%20District%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1645564756285!5m2!1sen!2sus"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <!-- Footer -->
@@ -138,7 +171,12 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5 class="mb-4">JEWELORA SUPPLIES</h5>
+                    <a class="navbar-brand text-nowrap" href="index.html"
+                        style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                        <img src="assets/images/logo2.png" alt="Jewelora"
+                            style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                        <span>JEWELORA</span>
+                    </a>
                     <p class="text-white-50 mb-4">The premier B2B destination for professional jewelry making supplies.
                     </p>
                     <div class="d-flex gap-3 social-links">
@@ -175,6 +213,7 @@
             <div
                 class="footer-bottom d-flex justify-content-between align-items-center border-top border-secondary pt-4 mt-5">
                 <span>&copy; <span id="current-year">2026</span> Jewelora Supplies. All rights reserved.</span>
+                <a href="#" class="text-white-50 back-to-top"><i class="bi bi-arrow-up-circle fs-4"></i></a>
             </div>
         </div>
     </footer>

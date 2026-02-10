@@ -15,14 +15,21 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                JEWELORA SUPPLIES
-                <small>Wholesale & Catalog</small>
+            <a class="navbar-brand text-nowrap" href="index.html"
+                style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                <img src="assets/images/logo2.png" alt="Jewelora"
+                    style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                <span>JEWELORA</span>
             </a>
             <div class="d-flex align-items-center order-lg-3 gap-2">
                 <span id="theme-toggle" class="theme-toggle me-3"><i class="bi bi-moon"></i></span>
-                <a href="login.html" class="btn btn-outline-primary d-none d-sm-block">Login</a>
-                <a href="register.html" class="btn btn-primary">Sign Up</a>
+
+                <div class="desktop-auth-btns d-flex gap-2">
+                    <a href="dashboard.html" class="btn btn-outline-primary">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    <a href="register.html" class="btn btn-primary text-nowrap">Sign Up</a>
+                </div>
+
                 <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarContent">
                     <span class="navbar-toggler-icon"></span>
@@ -30,13 +37,40 @@
             </div>
             <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home-2.html">Catalog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Main Home</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Modern Home</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Catalog</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Wholesale</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item active" href="pricing.html">Pricing</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
                 </ul>
+
+                <!-- Mobile Menu Buttons (Visible < 650px) -->
+                <div class="mobile-auth-btns mt-3 pb-3 border-top pt-3">
+                    <a href="dashboard.html" class="btn btn-outline-primary w-100 mb-2">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                    <a href="register.html" class="btn btn-primary w-100">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -45,12 +79,8 @@
     <section class="bg-light py-5">
         <div class="container text-center py-5">
             <h1 class="display-4">Wholesale Tiers</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center text-uppercase small">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pricing</li>
-                </ol>
-            </nav>
+            <p class="lead text-muted mt-3 mb-0">Choose the perfect membership tier to maximize your savings and
+                business growth.</p>
         </div>
     </section>
 
@@ -134,12 +164,222 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <span class="text-primary text-uppercase letter-spacing-2">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion custom-accordion" id="pricingFaq">
+                        <!-- Item 1 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne">
+                                    Is there a minimum order value for wholesale pricing?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Yes, for our <strong>Gold</strong> tier the MOQ is $500, and for
+                                    <strong>Platinum</strong> it is $5,000. Our <strong>Bronze</strong> tier has no
+                                    minimum order requirement, making it perfect for hobbyists and startups.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Do you offer custom manufacturing or casting services?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Absolutely! For Gold and Platinum members, we offer custom casting services. You can
+                                    send us your 3D files or wax models, and we will cast them in your choice of metal
+                                    with high precision.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    What payment methods do you accept?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    We accept all major credit cards (Visa, MasterCard, Amex), PayPal, and direct bank
+                                    wire transfers. <strong>Net 30 terms</strong> are available for approved Gold and
+                                    Platinum partners after credit verification.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    How long does shipping standardly take?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Domestic orders typically arrive within 3-5 business days. International shipping
+                                    times vary by location but generally take 7-14 business days. Platinum members
+                                    receive free express shipping upgrades.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    Do you ship internationally?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Yes, we proudly ship to over 50 countries worldwide including Canada, UK, Australia,
+                                    and most of Europe. Shipping rates are calculated at checkout based on package
+                                    weight and destination.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    Can I request a sample before placing a bulk order?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Yes, we verify quality first! We encourage ordering samples. Please contact our
+                                    sales team to arrange a sample pack of the items you are interested in before
+                                    committing to a bulk purchase.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">
+                                    What is your return policy for wholesale orders?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    We accept returns on defective or incorrect items within 30 days of delivery. Please
+                                    note that custom orders, cut chains, and bullion products are final sale and cannot
+                                    be returned.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 8 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false"
+                                    aria-controls="collapseEight">
+                                    Do you offer private labeling or custom packaging?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Yes, private labeling is a key feature of our Gold and Platinum tiers. We can
+                                    package products with your branding (cards, bags, boxes) so they are ready for
+                                    retail immediately upon arrival.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 9 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingNine">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false"
+                                    aria-controls="collapseNine">
+                                    How do I track my order?
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    Once your order ships, you will automatically receive a tracking number via email.
+                                    You can also view real-time order status and history to your dashboard account.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 10 -->
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+                            <h2 class="accordion-header" id="headingTen">
+                                <button class="accordion-button fw-bold collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false"
+                                    aria-controls="collapseTen">
+                                    Are your gemstones natural or synthetic?
+                                </button>
+                            </h2>
+                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                                data-bs-parent="#pricingFaq">
+                                <div class="accordion-body text-muted">
+                                    We offer both options to suit different price points. All product descriptions
+                                    clearly deal state whether a stone is Natural, Treated, or Lab-Created/Synthetic so
+                                    you know exactly what you are buying.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5 class="mb-4">JEWELORA SUPPLIES</h5>
+                    <a class="navbar-brand text-nowrap" href="index.html"
+                        style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+                        <img src="assets/images/logo2.png" alt="Jewelora"
+                            style="height: 40px !important; width: auto !important; object-fit: contain !important;">
+                        <span>JEWELORA</span>
+                    </a>
                     <p class="text-white-50 mb-4">The premier B2B destination for professional jewelry making supplies.
                     </p>
                     <div class="d-flex gap-3 social-links">
@@ -176,6 +416,7 @@
             <div
                 class="footer-bottom d-flex justify-content-between align-items-center border-top border-secondary pt-4 mt-5">
                 <span>&copy; <span id="current-year">2026</span> Jewelora Supplies. All rights reserved.</span>
+                <a href="#" class="text-white-50 back-to-top"><i class="bi bi-arrow-up-circle fs-4"></i></a>
             </div>
         </div>
     </footer>
