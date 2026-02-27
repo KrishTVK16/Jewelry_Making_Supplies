@@ -809,6 +809,25 @@ footer a:hover {
     color: rgba(255, 255, 255, 0.6) !important;
 }
 
+/* Keep pricing-page card text readable on dark card backgrounds */
+[data-theme="dark"] .pricing-page .card {
+    color: var(--body-text);
+}
+
+/* Keep non-active navbar dropdown items readable on white dropdown background */
+[data-theme="dark"] .navbar .dropdown-menu .dropdown-item:not(.active) {
+    color: #212529;
+}
+
+/* Keep "How It Works" card copy readable against white cards in dark mode */
+[data-theme="dark"] .how-it-works-section .bg-white h5 {
+    color: #212529;
+}
+
+[data-theme="dark"] .how-it-works-section .bg-white .text-muted {
+    color: #6c757d !important;
+}
+
 /* Theme Toggle */
 .theme-toggle {
     cursor: pointer;
