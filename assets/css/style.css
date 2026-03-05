@@ -828,6 +828,16 @@ footer a:hover {
     color: #6c757d !important;
 }
 
+/* Dark Mode: Dashboard Hamburger */
+[data-theme="dark"] #sidebar-toggle {
+    color: #FFFFFF !important;
+}
+
+/* Dark Mode: Navbar Hamburger */
+[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1);
+}
+
 /* Theme Toggle */
 .theme-toggle {
     cursor: pointer;
